@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/style.css" rel="stylesheet" />
+    <title>QuizMaster</title>
+  </head>
+  <body class="w-screen h-screen">
+    <main>
+     <div class="bg-[#158DFE] h-1/2">   
+      <section class="flex flex-row justify-start items-center p-3 gap-26 font-bold text-2xl text-white ">
+        <img src="png/cerveau.png" alt="image serveau" width="35" height="35"  />
+        <h1>QuizMaster</h1>
+      </section>
+      <hr class="bg-[#565857]" />
+      <section class="flex flex-row justify-center items-center gap-10.5 mt-13.25 text-[#FFFFFF]">
+        <article class="flex flex-col justify-center items-center gap-7">
+          <img
+            src="png/classement.png"
+            alt="image classement"
+            width="48"
+            height="48"
+          />
+          <h2>classement</h2>
+        </article>
+        <article class="flex flex-col justify-center items-center gap-7">
+          <img
+            src="png/theme-dechantillon-de-couleur.png"
+            alt="image théme"
+            width="48"
+            height="48"
+          />
+          <h2>Thèmes</h2>
+        </article>
+        <article class="flex flex-col justify-center items-center gap-7">
+          <img
+            src="png/gestion-du-temps.png"
+            alt="image temps"
+            width="48"
+            height="48"
+          />
+          <h2>Thèmes</h2>
+        </article>
+      </section>
+      <section class="text-[32px] font-bold text-[#FFFFFF] flex flex-wrap center ml-20 mt-13.25  ">
+        <h2 class="mb-13.25">Prêt à tester vos connaissances ?</h2>
+      </section>
+      </div> 
+      <section class="flex flex-wrap justify-center p-10 text-2xl ml-15">
+        <h2>Connectez vous pour reprendre vos quiz</h2>
+      </section>
+      <form action="#" method="#" class="flex flex-col justify-center items-center text-2xl gap-5">
+        <label for="id-pseudo">Nom d'utilisateur</label>
+        <input type="text" name="pseudo" id="id-pseudo" required placeholder="votre pseudo" class="bg-gray-50 w-3/5 p-4 rounded-[20px] font-bold text-[#000]" />
+        <input type="submit" value="Se connecter"  class="bg-[#158DFE] p-5 w-3/5 rounded-[20px] text-[#FFFF]" />
+      </form>
+    </main>
+  </body>
+</html>
