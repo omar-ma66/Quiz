@@ -1,21 +1,21 @@
 <?php
 session_start();
-if(!isset($_SESSION["connecter"]) && $_SESSION["connecter"] !== "yes")
-  {
-    header("location:index.php");
-  }
+if (!isset($_SESSION["connecter"]) && $_SESSION["connecter"] !== "yes") {
+  header("location:index.php");
+}
 
 ?>
 
 
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
 
 
 <!-- les break points de taillwind  sm   = width >= 640     px-->
@@ -27,92 +27,85 @@ if(!isset($_SESSION["connecter"]) && $_SESSION["connecter"] !== "yes")
 
 
 
-  <body class="w-screen h-screen">
-    <main>
-<!-- ############################################################################################# -->
-      <section class="flex flex-row justify-between items-center">
-        <div class="flex flex-row justify-center items-center p-6.5 gap-2">
-          <img
-            class="w-7.5"
-            src="png/fleche-gauche.png"
-            alt="fleche-gauche.png"
-          />
-          <a class="hover:text-red-700" href="theme.php"
-            ><span class="text-2xl">Quitter </span></a
-          >
-        </div>
-        <!-- -------------------------------------------------------------------------------- -->
-        <div
-          class="flex flex-row justify-center items-center px-6.5 py-0 h-12.5 gap-2 bg-[#d9D9D9] rounded-[25px]"
-        >
-          <img class="w-5.5 h-5.5" src="png/cercle.png" alt="cercle.png" />
-          <h2 id="theme-choisi" class="text-2xl"><?= $_SESSION["theme"] ?></h2>
-        </div>
-      </section>
-<!-- ############################################################################################# -->
+<body class="w-screen h-screen">
+  <main>
+    <!-- ############################################################################################# -->
+    <section class="flex flex-row justify-between items-center">
+      <div class="flex flex-row justify-center items-center p-6.5 gap-2">
+        <img
+          class="w-7.5"
+          src="png/fleche-gauche.png"
+          alt="fleche-gauche.png" />
+        <a class="hover:text-red-700" href="theme.php"><span class="text-2xl">Quitter </span></a>
+      </div>
+      <!-- -------------------------------------------------------------------------------- -->
+      <div
+        class="flex flex-row justify-center items-center px-6.5 py-0 h-12.5 gap-2 bg-[#d9D9D9] rounded-[25px]">
+        <img class="w-5.5 h-5.5" src="png/cercle.png" alt="cercle.png" />
+        <h2 id="theme-choisi" class="text-2xl"><?= $_SESSION["theme"] ?></h2>
+      </div>
+    </section>
+    <!-- ############################################################################################# -->
 
 
-      <section class="flex flex-col gap-4 justify-center">
-        <div class="flex flex-row justify-between p-5 text-2xl">
-          <h2 id="question-num">Question 1/5</h2>
-          <span
-            id="question-time"
-            class="bg-red-300 w-19 text-center rounded-2xl"
-            >15s</span
-          >
-        </div>
-        <!-- -------------------------------------------------------------------------------- -->
-        <div class="w-4/5 m-auto h-2.5 bg-[#d0dAFD]">
-          <div class="w-3/5 h-2.5 bg-[#158dfe]"></div>
-        </div>
-      </section>
-<!-- ############################################################################################# -->
+    <section class="flex flex-col gap-4 justify-center">
+      <div class="flex flex-row justify-between p-5 text-2xl">
+        <h2 id="question-num">Question 1/5</h2>
+        <span
+          id="question-time"
+          class="bg-red-300 w-19 text-center rounded-2xl">15s</span>
+      </div>
+      <!-- -------------------------------------------------------------------------------- -->
+      <div class="w-4/5 m-auto h-2.5 bg-[#d0dAFD]">
+        <div class="w-3/5 h-2.5 bg-[#158dfe]"></div>
+      </div>
+    </section>
+    <!-- ############################################################################################# -->
 
-      <section
-        class="flex flex-col justify-center items-center text-2xl mt-8 mb-8"
-      >
-        <div
-          id="quiz-question"
-          class="w-4/5 h-40 bg-[#d9D9D9] border-2 border-gray-400 rounded-3xl p-10 text-center"
-        >
-          Quelle est la capitale de l'Australie ?
-        </div>
-      </section>
-<!-- ############################################################################################# -->
-      <section class="flex flex-col justify-center items-center gap-2.5 text-2xl ">
-     
-     
-          <div class="w-4/5 bg-[#d9D9D9] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
-            <span>A</span> <span id="quiz-reponse1" class="ml-10">Réponse</span>
-          </div>
-          <!-- -------------------------------------------------------------------------------- -->
+    <section
+      class="flex flex-col justify-center items-center text-2xl mt-8 mb-8">
+      <div
+        id="quiz-question"
+        class="w-4/5 h-40 bg-[#d9D9D9] border-2 border-gray-400 rounded-3xl p-10 text-center">
+        Quelle est la capitale de l'Australie ?
+      </div>
+    </section>
+    <!-- ############################################################################################# -->
+    <section class="flex flex-col justify-center items-center gap-2.5 text-2xl ">
 
-          <div class="w-4/5 bg-[#d9D9D9] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
-            <span >B</span> <span id="quiz-reponse1" class="ml-10">Réponse</span>      
-        </div>
-    
-        <!-- -------------------------------------------------------------------------------- -->
 
-        <div class="w-4/5 bg-[#1dc414] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
-          <span>C</span> <span id="quiz-reponse1" class="ml-10">Réponse</span>
-        </div>
-        <!-- -------------------------------------------------------------------------------- -->
+      <div class="w-4/5 bg-[#d9D9D9] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
+        <span>A</span> <span id="quiz-reponse1" class="ml-10">Réponse</span>
+      </div>
+      <!-- -------------------------------------------------------------------------------- -->
 
-        <div class="w-4/5 bg-[#c80606] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
-          <span>D</span> <span id="quiz-reponse1" class="ml-10">Réponse</span>
-        </div>
-      
-      </section>
-<!-- ############################################################################################# -->
+      <div class="w-4/5 bg-[#d9D9D9] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
+        <span>B</span> <span id="quiz-reponse1" class="ml-10">Réponse</span>
+      </div>
 
-      <section class="flex flex-col justify-center items-center mt-4 text-2xl text-white">
-        <button
-          class="w-4/5 bg-[#158dfe] border-2 border-blue-700 rounded-3xl h-15">Question suivante
-        </button>
+      <!-- -------------------------------------------------------------------------------- -->
 
-      </section>
-<!-- ############################################################################################# -->
+      <div class="w-4/5 bg-[#1dc414] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
+        <span>C</span> <span id="quiz-reponse1" class="ml-10">Réponse</span>
+      </div>
+      <!-- -------------------------------------------------------------------------------- -->
 
-    </main>
-  </body>
+      <div class="w-4/5 bg-[#c80606] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
+        <span>D</span> <span id="quiz-reponse1" class="ml-10">Réponse</span>
+      </div>
+
+    </section>
+    <!-- ############################################################################################# -->
+
+    <section class="flex flex-col justify-center items-center mt-4 text-2xl text-white">
+      <button
+        class="w-4/5 bg-[#158dfe] border-2 border-blue-700 rounded-3xl h-15">Question suivante
+      </button>
+
+    </section>
+    <!-- ############################################################################################# -->
+
+  </main>
+</body>
+
 </html>

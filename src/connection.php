@@ -1,10 +1,9 @@
 <?php
 session_start();
 
-if($_SERVER["REQUEST_METHOD"] !== "POST")
-  {
-      header("location:../public/index.php?server-error:no-post-method");
-  }
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+  header("location:../public/index.php?server-error:no-post-method");
+}
 if (isset($_POST["pseudo"]) && !empty($_POST["pseudo"])) {
   $pseudo = htmlspecialchars($_POST["pseudo"]);
 
@@ -37,10 +36,4 @@ if (isset($_POST["pseudo"]) && !empty($_POST["pseudo"])) {
   $queryPrepare->closeCursor();
   $idcon = null;
   header("location:../public/theme.php");
-} 
-
-
-
-
-
-?>
+}
