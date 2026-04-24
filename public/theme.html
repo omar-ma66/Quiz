@@ -8,58 +8,77 @@
 </head>
 <body class="w-screen h-screen">
 
+<!-- les break points de taillwind  sm   = width >= 640     px-->
+<!-- les break points de taillwind  md   = width >= 768     px-->
+<!-- les break points de taillwind  lg   = width >= 1024    px-->
+<!-- les break points de taillwind  xl   = width >= 1280    px-->
+<!-- les break points de taillwind  2xl  = width >= 1536    px-->
+<!-- ############################################################################################# -->
 
 
-    <section class="flex flex-row justify-between p-3 mb-9 font-bold text-2xl">
-        <img src="png/cerveau.png" alt="cerveau.png" width="35" height="35">
-        <h1 >QuizMaster</h1>
-        <div class="hover:bg-[#64CD8A] p-1">
-            <a  href="index.html"><img src="png/se-deconnecter.png" alt="se-deconnecter.png" width="35" height="35"></a>
+    <section class="flex flex-row justify-between p-3 mb-9 font-bold text-2xl lg:justify-start">
+        <img class="w-8.75 h-8.75  lg:mr-6 lg:h-[48px] " src="png/cerveau.png" alt="cerveau.png" >
+        <h1 class="lg:text-4xl">QuizMaster</h1>
+        <div class="hover:bg-[#64CD8A] p-1 lg:ml-auto ">
+            <a  href="index.html"><img  class="w-[35px] h[35px] lg:w-[48px] l:h-[48px]" src="png/se-deconnecter.png" alt="se-deconnecter.png" width="35" height="35"></a>
         </div>
-        </section>
-    <hr class="ng-[#565857] pt-9">
-    <section class="flex flex-col justify-center items-start gap-2.5">
-        <h2 class="font-bold text-[32px] pl-3.5">Bonjour,User !</h2>
-        <p class="text-[24px] ml-4 pb-5">Choisissez un thème et commencez votre quiz</p>
     </section>
+                        <!-- ----------------------------------------------- -->
 
-    <div id="menu-theme" class="flex flex-col gap-1 "> 
-    <section class="bg-[#D9D9D9] p-4.5 rounded-[20px] flex flex-row justify-between">
+    <hr class="ng-[#565857] pt-9">
+                        <!-- ----------------------------------------------- -->
+
+    <section class="flex flex-col justify-center items-start gap-2.5 lg:gap-7">
+        <h2 class="font-bold text-[32px] pl-3.5    lg:text-4xl lg:pt-30">Bonjour,User !</h2>
+        <p class="text-[24px] ml-4 pb-5 lg:text-3xl">Choisissez un thème et commencez votre quiz</p>
+    </section>
+<!-- ############################################################################################# -->
+    <div id="menu-theme" class="flex flex-col gap-1 lg:flex-row lg:justify-around lg:pt-7 lg:items-center"> 
+    <section class="bg-[#D9D9D9] p-4.5 rounded-[20px] flex flex-row justify-between lg:gap-4  lg:p-10">
             <article class="flex flex-col gap-5 pb-3 ">
                 <div  class="bg-[#64CD8A]  w-22 flex justify-center rounded-[20px]"> 
-                   <img src="png/humain.png" alt="humain.png" width="58" height="58">
+                   <img src="png/humain.png" alt="humain.png" class="w-14.5 h-14.5 lg:w-[78px] lg:h-[78px]" >
                 </div>
                 <h3 class="text-2xl font-bold">Science</h3> 
             </article>
             <span class="self-end text-2xl ">Facile</span>
     </section>
-      <section class="bg-[#D9D9D9] p-4.5 rounded-[20px] flex flex-row justify-between">
+                        <!-- ----------------------------------------------- -->
+      <section class="bg-[#D9D9D9] p-4.5 rounded-[20px] flex flex-row justify-between lg:gap-4  lg:p-10">
             <article class="flex flex-col gap-5 pb-3 ">
                 <div  class="bg-[#64CD8A]  w-22 flex justify-center rounded-[20px]">
-                <img src="png/geometrie.png" alt="geometrie.png" width="58" height="58">
+                <img src="png/geometrie.png" alt="geometrie.png"class="w-14.5 h-14.5 lg:w-[78px] lg:h-[78px]">
                 </div>
                 <h3 class="text-2xl font-bold">Géometrie</h3> 
             </article>
             <span class="self-end text-2xl">Facile</span>
     </section>
-      <section class="bg-[#D9D9D9] p-4.5 rounded-[20px] flex flex-row justify-between">
+                        <!-- ----------------------------------------------- -->
+
+      <section class="bg-[#D9D9D9] p-4.5 rounded-[20px] flex flex-row justify-between lg:gap-4  lg:p-10">
             <article class="flex flex-col gap-5 pb-3 ">
                <div  class="bg-[#64CD8A]  w-22  flex justify-center rounded-[20px]">
-                    <img  src="png/capitale (1).png" alt="capitale" width="58" height="58">
+                    <img  src="png/capitale (1).png" alt="capitale"class="w-14.5 h-14.5 lg:w-[78px] lg:h-[78px]">
                 </div>
                 <h3 class="text-2xl font-bold">Capitale</h3> 
             </article>
             <span class="self-end text-2xl">Facile</span>
     </section>
-       <section class="bg-[#D9D9D9] p-4.5 rounded-[20px] flex flex-row justify-between">
+                        <!-- ----------------------------------------------- -->
+
+       <section class="bg-[#D9D9D9] p-4.5 rounded-[20px] flex flex-row justify-between lg:gap-4  lg:p-10">
             <article class="flex flex-col gap-5 pb-3 ">
                 <div class="bg-[#64CD8A]  w-22  flex justify-center rounded-[20px]">
-                  <img src="png/telescope.png" alt="telescope.png" width="58" height="58"> 
+                  <img src="png/telescope.png" alt="telescope.png"class="w-14.5 h-14.5 lg:w-[78px] lg:h-[78px]"> 
                 </div>
                 <h3 class="text-2xl font-bold">Capitale</h3> 
             </article>
             <span class="self-end text-2xl">Facile</span>
     </section>
+                        <!-- ----------------------------------------------- -->
+
      </div>
+<!-- ############################################################################################# -->
+
 </body>
 </html>
