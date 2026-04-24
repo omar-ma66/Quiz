@@ -1,3 +1,13 @@
+<?php
+session_start();
+if(!isset($_SESSION["connecter"]) && $_SESSION["connecter"] !== "yes")
+  {
+    header("location:index.php");
+  }
+
+?>
+
+
 <!doctype html>
 <html lang="fr">
   <head>
@@ -27,7 +37,7 @@
             src="png/fleche-gauche.png"
             alt="fleche-gauche.png"
           />
-          <a class="hover:text-red-700" href="theme.html"
+          <a class="hover:text-red-700" href="theme.php"
             ><span class="text-2xl">Quitter </span></a
           >
         </div>
@@ -36,7 +46,7 @@
           class="flex flex-row justify-center items-center px-6.5 py-0 h-12.5 gap-2 bg-[#d9D9D9] rounded-[25px]"
         >
           <img class="w-5.5 h-5.5" src="png/cercle.png" alt="cercle.png" />
-          <h2 id="theme-choisi" class="text-2xl">Géographie</h2>
+          <h2 id="theme-choisi" class="text-2xl"><?= $_SESSION["theme"] ?></h2>
         </div>
       </section>
 <!-- ############################################################################################# -->
