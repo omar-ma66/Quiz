@@ -11,15 +11,53 @@ let progresseBarre = document.querySelector("#progresse-barre");
 let btnSuivant = document.querySelector("#btn-suivant");
 let themeChoisi = document.querySelector("#theme-choisi");
 let themeID;
-let questions;
+let questionsAllInformations;
+let questionsID = [];
+let questionsEnonce = [];
 
-// fonction pour debugage 
-function testQuestions(datas)
-{
-     console.log (`test des données  ${datas["questions"][0][0]}`) ;
-     console.log (`test des données  ${datas["questions"][0][1]}`) ;
-     console.log (`test des données  ${datas["questions"][0][2]}`) ;
+
+
+//###########################################################################
+// fonction pour ranger les ID et les questions associer
+function questionRange(datas) {
+  datas["questions"].forEach((tab) => {
+    tab.forEach((elements, index) => {
+      if (index == 0) questionsID.push(elements);
+      if (index == 1) questionsEnonce.push(elements);
+    });
+  });
+  console.log(`Debug : voila las ID ${questionsID}`);
+  getReponses(questionsID);
 }
+//###########################################################################
+
+//recupere les reponses a mes questions
+async function getReponses(questions) {
+  let objetIdQuestion = [{status:"debug"}];
+  questionsID.forEach((element) => {
+    objetIdQuestion.push(Object.assign({}, { id: element }));
+
+  });
+  try {
+    let reponses = await fetch("api/getReponses.php", {
+      method: "POST",
+      body: JSON.stringify(objetIdQuestion),
+      headers: { "Content-type": "application/json" },
+    });
+    if (!reponses.ok) throw new Error("Une erreur est survenue");
+    let data = await reponses.json();
+    if (data["status"] == "success") {
+      console.log(
+        "debug :fichier game.js fonction getReponse.js : tout est ok ",
+      );
+    } else {
+      console.log("debug :fichier game.js fonction getReponse.js : Erreur ");
+    }
+  } catch (err) {
+    console.log("debug  game.js getReponse.js  : serveur erreur ");
+  }
+}
+//###########################################################################
 
 // Recupere le ID du Theme
 async function getThemeQuestionsID(themeObjet) {
@@ -48,7 +86,9 @@ async function getThemeQuestionsID(themeObjet) {
     console.log("une erreur c'est produite");
   }
 }
-// A partir du ID recupère les questions
+
+//###########################################################################
+// A partir du ID du theme recupère  5  questions aleatoire
 async function getThemeQuestionsForGame(themeID) {
   let themeObjet = { theme: themeID, status: "debug" };
   try {
@@ -61,12 +101,11 @@ async function getThemeQuestionsForGame(themeID) {
     let data = await reponse.json();
     if (data["status"] === "success") {
       console.log(
-        "Debug fichier game.js fonction getThemeQuestionForGame: tout c'est bien passe :"
+        "Debug fichier game.js fonction getThemeQuestionForGame: tout c'est bien passe :",
       );
-       console.log(data["questions"][0]);   
-        questions = data ; // ici j'ai mes 5 questions ; 
-   
-
+      console.log(data["questions"][0]);
+      questionsAllInformations = data; // ici j'ai mes 5 questions ;
+      questionRange(data);
     } else {
       console.log("un probleme cote php");
     }
@@ -75,6 +114,9 @@ async function getThemeQuestionsForGame(themeID) {
   }
 }
 // console.log(`valeur du theme ${themeChoisi.innerText}`);
+
+//###########################################################################
+// objet qui contient  le theme choisi
 
 const objetTheme = {
   status: "debug",
