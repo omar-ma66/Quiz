@@ -58,7 +58,7 @@ if (!isset($_SESSION["connecter"]) ||  $_SESSION["connecter"] !== "yes") {
         <section id="id-geographie" class="bg-[#D9D9D9] p-4.5 rounded-[20px] flex flex-row justify-between lg:gap-4  lg:p-10  transition-colors hover:border-blue-600  hover:bg-gray-300 border-gray-500 border-4 hover:scale-103">
             <article class="flex flex-col gap-5 pb-3 ">
                 <div class="bg-[#64CD8A]  w-22 flex justify-center rounded-[20px]">
-                    <img src="png/geometrie.png" alt="geometrie.png" class="w-14.5 h-14.5 lg:w-[78px] lg:h-[78px]">
+                    <img src="png/geometrie.png" alt="geometrie.png" class="w-14.5 h-14.5 lg:w-19.5 lg:h-19.5">
                 </div>
                 <h3 class="text-2xl font-bold">Géographie</h3>
             </article>
@@ -69,7 +69,7 @@ if (!isset($_SESSION["connecter"]) ||  $_SESSION["connecter"] !== "yes") {
         <section id="id-capitale" class="bg-[#D9D9D9] p-4.5 rounded-[20px] flex flex-row justify-between lg:gap-4  lg:p-10 transition-colors hover:border-blue-600 hover:bg-gray-300  border-gray-500 border-4 hover:scale-103">
             <article class="flex flex-col gap-5 pb-3 ">
                 <div class="bg-[#64CD8A]  w-22  flex justify-center rounded-[20px]">
-                    <img src="png/capitale (1).png" alt="capitale" class="w-14.5 h-14.5 lg:w-[78px] lg:h-[78px]">
+                    <img src="png/capitale (1).png" alt="capitale" class="w-14.5 h-14.5 lg:w-19.5 lg:h-19.5">
                 </div>
                 <h3 class="text-2xl font-bold">Capitales</h3>
             </article>
@@ -80,7 +80,7 @@ if (!isset($_SESSION["connecter"]) ||  $_SESSION["connecter"] !== "yes") {
         <section id="id-univers" class="bg-[#D9D9D9] p-4.5 rounded-[20px] flex flex-row justify-between lg:gap-4  lg:p-10 transition-colors hover:border-blue-600 hover:bg-gray-300  border-gray-500 border-4 hover:scale-103">
             <article class="flex flex-col gap-5 pb-3 ">
                 <div class="bg-[#64CD8A]  w-22  flex justify-center rounded-[20px]">
-                    <img src="png/telescope.png" alt="telescope.png" class="w-14.5 h-14.5 lg:w-[78px] lg:h-[78px]">
+                    <img src="png/telescope.png" alt="telescope.png" class="w-14.5 h-14.5 lg:w-19.5 lg:h-19.5">
                 </div>
                 <h3 class="text-2xl font-bold">Univers</h3>
             </article>
