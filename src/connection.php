@@ -9,7 +9,7 @@ if (isset($_POST["pseudo"]) && !empty($_POST["pseudo"])) {
 
   require "../src/PDOConnect.php";
 
-  $idcon = PDOConnect("param", "quiz");
+  $idcon = PDOConnect("param");
 
   $query = "SELECT * from users where pseudo = :pseudo ";
 
