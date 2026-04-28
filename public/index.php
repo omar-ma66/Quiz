@@ -22,7 +22,7 @@ session_start();
 
 <body class="w-screen h-screen">
 
-  <main class="lg:flex flex-row h-screen gap-6">
+  <main class="lg:flex flex-row min-h-dvh  gap-6">
 
     <!-- ############################################################################################# -->
     <div class=" bg-[#158DFE]  lg:flex-col flex-1  lg:pb-30">
@@ -38,7 +38,7 @@ session_start();
       <hr class="bg-[#565857] lg:" />
       <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
       <section
-        class="  gap-x-20 text-2xl flex flex-row justify-center items-center pt-30  text-[#FFFFFF] lg:gap-x-20 lg:order-4  lg:pt-30 lg:text-4xl ">
+        class="  gap-x-10 text-2xl flex flex-row justify-center items-center pt-30  text-[#FFFFFF] lg:gap-x-20 lg:order-4  lg:pt-30 lg:text-4xl ">
         <article class="flex flex-col justify-center items-center gap-7  ">
           <img
             src="png/classement.png"
@@ -47,7 +47,7 @@ session_start();
           <h2>classement</h2>
         </article>
         <!-- ----------------------------------------------------------- -->
-        <article class="flex flex-col justify-center items-center gap-7 ">
+        <article class="flex flex-col justify-center items-center gap-7  ">
           <img
             src="png/theme-dechantillon-de-couleur.png"
             alt="image théme"
@@ -56,7 +56,7 @@ session_start();
         </article>
         <!-- ----------------------------------------------------------- -->
 
-        <article class="flex flex-col justify-center items-center gap-7">
+        <article class="flex flex-col justify-center items-center gap-7 ">
           <img
             src="png/gestion-du-temps.png"
             alt="image temps"

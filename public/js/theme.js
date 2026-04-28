@@ -3,7 +3,7 @@ console.log("hello les friends");
 const univers = document.querySelector("#id-univers");
 const capitale = document.querySelector("#id-capitale");
 const science = document.querySelector("#id-science");
-const geometrie = document.querySelector("#id-geometrie");
+const geographie = document.querySelector("#id-geographie");
 
 async function sendMessage(message) {
   let objTheme = { theme: message };
@@ -36,7 +36,7 @@ if (capitale) {
   capitale.addEventListener("click", (event) => {
     if (event.currentTarget == capitale) {
       console.log("choix capitale");
-      sendMessage("capitale");
+      sendMessage("capitales");
     }
   });
 }
@@ -48,11 +48,11 @@ if (science) {
     }
   });
 }
-if (geometrie) {
-  geometrie.addEventListener("click", (event) => {
-    if (event.currentTarget == geometrie) {
-      console.log("choix geometrie");
-      sendMessage("geometrie");
+if (geographie) {
+  geographie.addEventListener("click", (event) => {
+    if (event.currentTarget == geographie) {
+      console.log("choix geographie");
+      sendMessage("géographie");
     }
   });
 }

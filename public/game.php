@@ -4,6 +4,7 @@ if (!isset($_SESSION["connecter"]) && $_SESSION["connecter"] !== "yes") {
   header("location:index.php");
 }
 
+$theme = $_SESSION["theme"] ;
 ?>
 
 
@@ -15,6 +16,9 @@ if (!isset($_SESSION["connecter"]) && $_SESSION["connecter"] !== "yes") {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Game</title>
   <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <script defer async src="js/game.js" type="module">
+  
+  </script>
 </head>
 
 
@@ -28,7 +32,7 @@ if (!isset($_SESSION["connecter"]) && $_SESSION["connecter"] !== "yes") {
 
 
 <body class="w-screen h-screen">
-  <main>
+  <main class="mi-h-dvh">
     <!-- ############################################################################################# -->
     <section class="flex flex-row justify-between items-center">
       <div class="flex flex-row justify-center items-center p-6.5 gap-2">
@@ -49,7 +53,7 @@ if (!isset($_SESSION["connecter"]) && $_SESSION["connecter"] !== "yes") {
 
 
     <section class="flex flex-col gap-4 justify-center">
-      <div class="flex flex-row justify-between p-5 text-2xl">
+      <div class="flex flex-row justify-between p-2 text-2xl">
         <h2 id="question-num">Question 1/5</h2>
         <span
           id="question-time"
@@ -57,16 +61,16 @@ if (!isset($_SESSION["connecter"]) && $_SESSION["connecter"] !== "yes") {
       </div>
       <!-- -------------------------------------------------------------------------------- -->
       <div class="w-4/5 m-auto h-2.5 bg-[#d0dAFD]">
-        <div class="w-3/5 h-2.5 bg-[#158dfe]"></div>
+        <div id="progresse-barre" class="w-3/5 h-2.5 bg-[#158dfe]"></div>
       </div>
     </section>
     <!-- ############################################################################################# -->
 
     <section
-      class="flex flex-col justify-center items-center text-2xl mt-8 mb-8">
+      class="flex flex-col justify-center items-center text-2xl mt-2 mb-2">
       <div
-        id="quiz-question"
-        class="w-4/5 h-40 bg-[#d9D9D9] border-2 border-gray-400 rounded-3xl p-10 text-center">
+        id="question-quiz"
+        class="w-4/5 h-1/7 bg-[#d9D9D9] border-2 border-gray-400 rounded-3xl p-10 text-center">
         Quelle est la capitale de l'Australie ?
       </div>
     </section>
@@ -80,31 +84,27 @@ if (!isset($_SESSION["connecter"]) && $_SESSION["connecter"] !== "yes") {
       <!-- -------------------------------------------------------------------------------- -->
 
       <div class="w-4/5 bg-[#d9D9D9] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
-        <span>B</span> <span id="quiz-reponse1" class="ml-10">Réponse</span>
+        <span>B</span> <span id="quiz-reponse2" class="ml-10">Réponse</span>
       </div>
 
       <!-- -------------------------------------------------------------------------------- -->
 
-      <div class="w-4/5 bg-[#1dc414] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
-        <span>C</span> <span id="quiz-reponse1" class="ml-10">Réponse</span>
+      <div class="w-4/5 bg-[#d9D9D9] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
+        <span>C</span> <span id="quiz-reponse3" class="ml-10">Réponse</span>
       </div>
       <!-- -------------------------------------------------------------------------------- -->
 
-      <div class="w-4/5 bg-[#c80606] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
-        <span>D</span> <span id="quiz-reponse1" class="ml-10">Réponse</span>
+      <div class="w-4/5 bg-[#d9D9D9] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
+        <span>D</span> <span id="quiz-reponse4" class="ml-10">Réponse</span>
       </div>
-
     </section>
     <!-- ############################################################################################# -->
-
-    <section class="flex flex-col justify-center items-center mt-4 text-2xl text-white">
-      <button
-        class="w-4/5 bg-[#158dfe] border-2 border-blue-700 rounded-3xl h-15">Question suivante
+    <section class="invisible flex flex-col justify-center items-center mt-4 text-2xl text-white">
+      <button id="btn-suivant"
+        class="w-4/5  bg-[#158dfe] border-2 border-blue-700 rounded-3xl h-15">Question suivante
       </button>
-
     </section>
     <!-- ############################################################################################# -->
-
   </main>
 </body>
 

@@ -1,8 +1,8 @@
 <?php
-function PDOConnect($param, $base)
+function PDOConnect(string $param)
 {
     require($param . ".inc.php");
-
+    $base = DATABASE;
     $dsn = "mysql:host=" . HOST . ";dbname=" . $base;
     $user = USER;
     $pass = PASS;
