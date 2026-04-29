@@ -40,10 +40,10 @@
     <section class="flex flex-col gap-6 justify-center items-center lg:flex-row lg:justify-around lg:px-50 ">
       <a
         class="text-3xl text-white w-4/5 px-20 py-6 h-20 bg-blue-600 rounded-3xl flex justify-center items-center lg:text-4xl"
-        href="theme.html">Rejouer</a>
+        href="theme.php">Rejouer</a>
       <a
         class="text-3xl w-4/5 px-20 py-6 h-20 bg-gray-400 rounded-3xl flex justify-center items-center lg:text-4xl"
-        href="index.html">Accueil</a>
+        href="index.php">Accueil</a>
     </section>
     <!-- ############################################################################################# -->
 
