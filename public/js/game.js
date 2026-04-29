@@ -185,6 +185,15 @@ function setQuestion(num)
 }
 
 
+function InitDataReponses()
+{
+  quizReponse1.dataset.reponse = 0 ;
+  quizReponse2.dataset.reponse = 0 ;
+  quizReponse3.dataset.reponse = 0 ;
+  quizReponse4.dataset.reponse = 0 ;
+}
+
+
 //###########################################################################
 // le jeux commance
 let bonneReponse = 1;
@@ -192,7 +201,7 @@ let numQuestion = 0 ;
 function playGame()
 {
   InitBackColorReponse();
-  
+  InitDataReponses();
   
   let questionsID = questionsAllInformations["questions"][numQuestion][0];
   let question    = questionsAllInformations["questions"][numQuestion][1];
@@ -226,6 +235,11 @@ quizReponse1.innerText = reponsesAll[0][2] ;
 quizReponse2.innerText  = reponsesAll[1][2] ;
 quizReponse3.innerText  = reponsesAll[2][2] ;
 quizReponse4.innerText  = reponsesAll[3][2] ;
+
+// quizReponse1.dataset.reponse = reponsesAll[0][3];
+// quizReponse2.dataset.reponse = reponsesAll[1][3];
+// quizReponse3.dataset.reponse = reponsesAll[2][3];
+// quizReponse4.dataset.reponse = reponsesAll[3][3];
 //######################################
                 break;
                  case reponsesAll[4][1]:                                         
@@ -238,6 +252,12 @@ quizReponse1.innerText  = reponsesAll[4][2] ;
 quizReponse2.innerText  = reponsesAll[5][2] ;
 quizReponse3.innerText  = reponsesAll[6][2] ;
 quizReponse4.innerText  = reponsesAll[7][2] ;
+
+
+// quizReponse1.dataset.reponse = reponsesAll[4][3];
+// quizReponse2.dataset.reponse = reponsesAll[5][3];
+// quizReponse3.dataset.reponse = reponsesAll[6][3];
+// quizReponse4.dataset.reponse = reponsesAll[7][3];
 //######################################
                 break;
                     case reponsesAll[8][1]:
@@ -250,6 +270,12 @@ quizReponse1.innerText  = reponsesAll[8][2] ;
 quizReponse2.innerText  = reponsesAll[9][2] ;
 quizReponse3.innerText  = reponsesAll[10][2] ;
 quizReponse4.innerText  = reponsesAll[11][2] ;
+
+
+// quizReponse1.dataset.reponse = reponsesAll[8][3];
+// quizReponse2.dataset.reponse = reponsesAll[9][3];
+// quizReponse3.dataset.reponse = reponsesAll[10][3];
+// quizReponse4.dataset.reponse = reponsesAll[11][3];
 //######################################
                 break;
                      case reponsesAll[12][1]:
@@ -262,6 +288,12 @@ quizReponse1.innerText  = reponsesAll[12][2] ;
 quizReponse2.innerText  = reponsesAll[13][2] ;
 quizReponse3.innerText = reponsesAll[14][2] ;
 quizReponse4.innerText  = reponsesAll[15][2] ;
+
+
+// quizReponse1.dataset.reponse = reponsesAll[12][3];
+// quizReponse2.dataset.reponse = reponsesAll[13][3];
+// quizReponse3.dataset.reponse = reponsesAll[14][3];
+// quizReponse4.dataset.reponse = reponsesAll[15][3];
 //######################################
                 break;
                      case reponsesAll[16][1]:
@@ -274,6 +306,11 @@ quizReponse1.innerText  = reponsesAll[16][2] ;
 quizReponse2.innerText  = reponsesAll[17][2] ;
 quizReponse3.innerText  = reponsesAll[18][2] ;
 quizReponse4.innerText  = reponsesAll[19][2] ;
+
+// quizReponse1.dataset.reponse  = reponsesAll[16][3] ;
+// quizReponse2.dataset.reponse  = reponsesAll[17][3] ;
+// quizReponse3.dataset.reponse  = reponsesAll[18][3] ;
+// quizReponse4.dataset.reponse  = reponsesAll[19][3] ;
 //######################################
                 break;
 }

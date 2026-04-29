@@ -78,24 +78,24 @@ $theme = $_SESSION["theme"] ;
     <section class="flex flex-col justify-center items-center gap-2.5 text-2xl ">
 
 
-      <div id="boiteReponse1" class="w-4/5  bg-[#d9d9d9] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
-        <span>A</span> <span id="quiz-reponse1" class="ml-10">Réponse</span>
+      <div   id="boiteReponse1" class="w-4/5  bg-[#d9d9d9] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
+        <span>A</span> <span data-reponse="0" id="quiz-reponse1" class="ml-10">Réponse</span>
       </div>
       <!-- -------------------------------------------------------------------------------- -->
 
-      <div id="boiteReponse2" class="w-4/5  bg-[#d9d9d9] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
-        <span>B</span> <span id="quiz-reponse2" class="ml-10">Réponse</span>
+      <div  id="boiteReponse2" class="w-4/5  bg-[#d9d9d9] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
+        <span>B</span> <span data-reponse="0"id="quiz-reponse2" class="ml-10">Réponse</span>
       </div>
 
       <!-- -------------------------------------------------------------------------------- -->
 
       <div id="boiteReponse3" class="w-4/5 bg-[#d9d9d9] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
-        <span>C</span> <span id="quiz-reponse3" class="ml-10">Réponse</span>
+        <span>C</span> <span  data-reponse="0"id="quiz-reponse3" class="ml-10">Réponse</span>
       </div>
       <!-- -------------------------------------------------------------------------------- -->
 
       <div id="boiteReponse4" class="w-4/5  bg-[#d9d9d9] border-2 border-gray-400 rounded-3xl h-25 flex flex-row justify-start items-center pl-10">
-        <span>D</span> <span id="quiz-reponse4" class="ml-10">Réponse</span>
+        <span>D</span> <span data-reponse="0" id="quiz-reponse4" class="ml-10">Réponse</span>
       </div>
     </section>
     <!-- ############################################################################################# -->
