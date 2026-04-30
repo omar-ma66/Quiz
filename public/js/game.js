@@ -30,6 +30,19 @@ let gameObjet = [
 ];
 
 
+function createRandomMatrix(limite)
+{
+   const tableau = [] ;
+  while(tableau.length < 4)
+  {
+
+    let r =  Math.floor( ( Math.random()*10) % limite ) ;
+
+    if ( !tableau.includes(r))
+            tableau.push(r);
+  }
+  return [...tableau];
+}
 //#####################################################################
 // initialise et reset le background des 4 reponses en gris
 
@@ -198,11 +211,12 @@ function InitDataReponses()
 // le jeux commance
 let bonneReponse = 1;
 let numQuestion = 0 ;
+//###########################################################################
 function playGame()
 {
-  InitBackColorReponse();
-  InitDataReponses();
-  
+  InitBackColorReponse(); // initialise le fond des reponses
+  InitDataReponses();    // init la dataset 
+  const matrix = createRandomMatrix(4);
   let questionsID = questionsAllInformations["questions"][numQuestion][0];
   let question    = questionsAllInformations["questions"][numQuestion][1];
   let theme    = questionsAllInformations["questions"][numQuestion][2];
@@ -220,8 +234,8 @@ console.log( `:${question}`);
   // console.log(reponsesAll[16][1]);
 
   setQuestion(numQuestion+1);  // affiche le numero de question
-  runTime(15);
-   progresseBarre();
+  runTime(15); // demarage du chrono
+   progresseBarre(); 
               switch(questionsID)
               {
                 case reponsesAll[0][1]:
@@ -236,10 +250,10 @@ quizReponse2.innerText  = reponsesAll[1][2] ;
 quizReponse3.innerText  = reponsesAll[2][2] ;
 quizReponse4.innerText  = reponsesAll[3][2] ;
 
-// quizReponse1.dataset.reponse = reponsesAll[0][3];
-// quizReponse2.dataset.reponse = reponsesAll[1][3];
-// quizReponse3.dataset.reponse = reponsesAll[2][3];
-// quizReponse4.dataset.reponse = reponsesAll[3][3];
+quizReponse1.dataset.reponse = reponsesAll[0][3];
+quizReponse2.dataset.reponse = reponsesAll[1][3];
+quizReponse3.dataset.reponse = reponsesAll[2][3];
+quizReponse4.dataset.reponse = reponsesAll[3][3];
 //######################################
                 break;
                  case reponsesAll[4][1]:                                         
@@ -254,10 +268,10 @@ quizReponse3.innerText  = reponsesAll[6][2] ;
 quizReponse4.innerText  = reponsesAll[7][2] ;
 
 
-// quizReponse1.dataset.reponse = reponsesAll[4][3];
-// quizReponse2.dataset.reponse = reponsesAll[5][3];
-// quizReponse3.dataset.reponse = reponsesAll[6][3];
-// quizReponse4.dataset.reponse = reponsesAll[7][3];
+quizReponse1.dataset.reponse = reponsesAll[4][3];
+quizReponse2.dataset.reponse = reponsesAll[5][3];
+quizReponse3.dataset.reponse = reponsesAll[6][3];
+quizReponse4.dataset.reponse = reponsesAll[7][3];
 //######################################
                 break;
                     case reponsesAll[8][1]:
@@ -272,10 +286,10 @@ quizReponse3.innerText  = reponsesAll[10][2] ;
 quizReponse4.innerText  = reponsesAll[11][2] ;
 
 
-// quizReponse1.dataset.reponse = reponsesAll[8][3];
-// quizReponse2.dataset.reponse = reponsesAll[9][3];
-// quizReponse3.dataset.reponse = reponsesAll[10][3];
-// quizReponse4.dataset.reponse = reponsesAll[11][3];
+quizReponse1.dataset.reponse = reponsesAll[8][3];
+quizReponse2.dataset.reponse = reponsesAll[9][3];
+quizReponse3.dataset.reponse = reponsesAll[10][3];
+quizReponse4.dataset.reponse = reponsesAll[11][3];
 //######################################
                 break;
                      case reponsesAll[12][1]:
@@ -290,10 +304,10 @@ quizReponse3.innerText = reponsesAll[14][2] ;
 quizReponse4.innerText  = reponsesAll[15][2] ;
 
 
-// quizReponse1.dataset.reponse = reponsesAll[12][3];
-// quizReponse2.dataset.reponse = reponsesAll[13][3];
-// quizReponse3.dataset.reponse = reponsesAll[14][3];
-// quizReponse4.dataset.reponse = reponsesAll[15][3];
+quizReponse1.dataset.reponse = reponsesAll[12][3];
+quizReponse2.dataset.reponse = reponsesAll[13][3];
+quizReponse3.dataset.reponse = reponsesAll[14][3];
+quizReponse4.dataset.reponse = reponsesAll[15][3];
 //######################################
                 break;
                      case reponsesAll[16][1]:
@@ -307,10 +321,10 @@ quizReponse2.innerText  = reponsesAll[17][2] ;
 quizReponse3.innerText  = reponsesAll[18][2] ;
 quizReponse4.innerText  = reponsesAll[19][2] ;
 
-// quizReponse1.dataset.reponse  = reponsesAll[16][3] ;
-// quizReponse2.dataset.reponse  = reponsesAll[17][3] ;
-// quizReponse3.dataset.reponse  = reponsesAll[18][3] ;
-// quizReponse4.dataset.reponse  = reponsesAll[19][3] ;
+quizReponse1.dataset.reponse  = reponsesAll[16][3] ;
+quizReponse2.dataset.reponse  = reponsesAll[17][3] ;
+quizReponse3.dataset.reponse  = reponsesAll[18][3] ;
+quizReponse4.dataset.reponse  = reponsesAll[19][3] ;
 //######################################
                 break;
 }
