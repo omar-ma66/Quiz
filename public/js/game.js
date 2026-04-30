@@ -86,6 +86,7 @@ function initEventBoutonReponse(btn)
            if( btn.classList.contains('bg-[#d9d9d9]') )
                 {
                   console.log("#########((((((((((((###########");
+                  
                  btn.classList.remove("bg-[#d9d9d9]"); 
                  btn.classList.add("bg-green-300"); 
     
@@ -101,6 +102,16 @@ initEventBoutonReponse(boiteReponse1);
 initEventBoutonReponse(boiteReponse2);
 initEventBoutonReponse(boiteReponse3);
 initEventBoutonReponse(boiteReponse4);
+
+
+function btnSuivantInvisible()
+{
+  btnSuivant.classList.add("invisible");
+}
+function btnSuivantVisible()
+{
+   btnSuivant.classList.remove("invisible"); 
+}
 
 
 //##################################################################
@@ -159,16 +170,22 @@ function decrementeCompteur()
   else
   {
     clearInterval(myTimeOut);
-    btnSuivant.classList.remove("invisible");
+    btnSuivantVisible();
   }
   
 }
 //#############################################
 // demare le compteur
 function runTime( time )
-{   clearInterval(myTimeOut);
+{     stopTime(); // clearInterval(myTimeOut);
   decompte = time ;
   myTimeOut = setInterval(decrementeCompteur,1000);
+}
+
+
+function stopTime()
+{
+  clearInterval(myTimeOut);
 }
 
 //#############################################
@@ -216,6 +233,7 @@ function playGame()
 {
   InitBackColorReponse(); // initialise le fond des reponses
   InitDataReponses();    // init la dataset 
+  btnSuivantInvisible();
   const matrix = createRandomMatrix(4);
   let questionsID = questionsAllInformations["questions"][numQuestion][0];
   let question    = questionsAllInformations["questions"][numQuestion][1];
@@ -236,95 +254,95 @@ console.log( `:${question}`);
   setQuestion(numQuestion+1);  // affiche le numero de question
   runTime(15); // demarage du chrono
    progresseBarre(); 
-              switch(questionsID)
+              switch(questionsID)       // id de la question
               {
-                case reponsesAll[0][1]:
+                case reponsesAll[0][1]:         // id question reponse  équivalent 
         
 console.log(`reponses possible ${reponsesAll[0][2]}`);  
 console.log(`  ${reponsesAll[1][2]} `)    ;      
 console.log(`  ${reponsesAll[2][2]} ` )   ;                                        
 console.log(`${reponsesAll[3][2]} ` ); 
 //######################################
-quizReponse1.innerText = reponsesAll[0][2] ;
-quizReponse2.innerText  = reponsesAll[1][2] ;
-quizReponse3.innerText  = reponsesAll[2][2] ;
-quizReponse4.innerText  = reponsesAll[3][2] ;
+quizReponse1.innerText = reponsesAll[matrix[0]][2] ;
+quizReponse2.innerText  = reponsesAll[matrix[1]][2] ;
+quizReponse3.innerText  = reponsesAll[matrix[2]][2] ;
+quizReponse4.innerText  = reponsesAll[matrix[3]][2] ;
 
-quizReponse1.dataset.reponse = reponsesAll[0][3];
-quizReponse2.dataset.reponse = reponsesAll[1][3];
-quizReponse3.dataset.reponse = reponsesAll[2][3];
-quizReponse4.dataset.reponse = reponsesAll[3][3];
+quizReponse1.dataset.reponse = reponsesAll[matrix[0]][3];
+quizReponse2.dataset.reponse = reponsesAll[matrix[1]][3];
+quizReponse3.dataset.reponse = reponsesAll[matrix[2]][3];
+quizReponse4.dataset.reponse = reponsesAll[matrix[3]][3];
 //######################################
                 break;
-                 case reponsesAll[4][1]:                                         
+                 case reponsesAll[4][1]:        // id question reponse  équivalent                                   
 console.log(`reponses possible ${reponsesAll[4][2]}`);  
 console.log(`  ${reponsesAll[5][2]} `)    ;      
 console.log(`  ${reponsesAll[6][2]} ` )   ;                                        
 console.log(`${reponsesAll[7][2]} ` ); 
 //######################################
-quizReponse1.innerText  = reponsesAll[4][2] ;
-quizReponse2.innerText  = reponsesAll[5][2] ;
-quizReponse3.innerText  = reponsesAll[6][2] ;
-quizReponse4.innerText  = reponsesAll[7][2] ;
+quizReponse1.innerText  = reponsesAll[matrix[0]+4][2] ;
+quizReponse2.innerText  = reponsesAll[matrix[1]+4][2] ;
+quizReponse3.innerText  = reponsesAll[matrix[2]+4][2] ;
+quizReponse4.innerText  = reponsesAll[matrix[3]+4][2] ;
 
 
-quizReponse1.dataset.reponse = reponsesAll[4][3];
-quizReponse2.dataset.reponse = reponsesAll[5][3];
-quizReponse3.dataset.reponse = reponsesAll[6][3];
-quizReponse4.dataset.reponse = reponsesAll[7][3];
+quizReponse1.dataset.reponse = reponsesAll[matrix[0]+4][3];
+quizReponse2.dataset.reponse = reponsesAll[matrix[1]+4][3];
+quizReponse3.dataset.reponse = reponsesAll[matrix[2]+4][3];
+quizReponse4.dataset.reponse = reponsesAll[matrix[3]+4][3];
 //######################################
                 break;
-                    case reponsesAll[8][1]:
+                    case reponsesAll[8][1]:    // id question reponse  équivalent 
 console.log(`reponses possible ${reponsesAll[8][2]}`);  
 console.log(`  ${reponsesAll[9][2]} `)    ;      
 console.log(`  ${reponsesAll[10][2]} ` )   ;                                        
 console.log(`${reponsesAll[11][2]} ` ); 
 //######################################
-quizReponse1.innerText  = reponsesAll[8][2] ;
-quizReponse2.innerText  = reponsesAll[9][2] ;
-quizReponse3.innerText  = reponsesAll[10][2] ;
-quizReponse4.innerText  = reponsesAll[11][2] ;
+quizReponse1.innerText  = reponsesAll[matrix[0]+8][2] ;
+quizReponse2.innerText  = reponsesAll[matrix[1]+8][2] ;
+quizReponse3.innerText  = reponsesAll[matrix[2]+8][2] ;
+quizReponse4.innerText  = reponsesAll[matrix[3]+8][2] ;
 
 
-quizReponse1.dataset.reponse = reponsesAll[8][3];
-quizReponse2.dataset.reponse = reponsesAll[9][3];
-quizReponse3.dataset.reponse = reponsesAll[10][3];
-quizReponse4.dataset.reponse = reponsesAll[11][3];
+quizReponse1.dataset.reponse = reponsesAll[matrix[0]+8][3];
+quizReponse2.dataset.reponse = reponsesAll[matrix[1]+8][3];
+quizReponse3.dataset.reponse = reponsesAll[matrix[2]+8][3];
+quizReponse4.dataset.reponse = reponsesAll[matrix[3]+8][3];
 //######################################
                 break;
-                     case reponsesAll[12][1]:
+                     case reponsesAll[12][1]:     // id question reponse  équivalent 
 console.log(`reponses possible ${reponsesAll[12][2]}`);  
 console.log(`  ${reponsesAll[13][2]} `)    ;      
 console.log(`  ${reponsesAll[14][2]} ` )   ;                                        
 console.log(`${reponsesAll[15][2]} ` ); 
 //######################################
-quizReponse1.innerText  = reponsesAll[12][2] ;
-quizReponse2.innerText  = reponsesAll[13][2] ;
-quizReponse3.innerText = reponsesAll[14][2] ;
-quizReponse4.innerText  = reponsesAll[15][2] ;
+quizReponse1.innerText  = reponsesAll[matrix[0]+12][2] ;
+quizReponse2.innerText  = reponsesAll[matrix[1]+12][2] ;
+quizReponse3.innerText = reponsesAll[matrix[2]+12][2] ;
+quizReponse4.innerText  = reponsesAll[matrix[3]+12][2] ;
 
 
-quizReponse1.dataset.reponse = reponsesAll[12][3];
-quizReponse2.dataset.reponse = reponsesAll[13][3];
-quizReponse3.dataset.reponse = reponsesAll[14][3];
-quizReponse4.dataset.reponse = reponsesAll[15][3];
+quizReponse1.dataset.reponse = reponsesAll[matrix[0]+12][3];
+quizReponse2.dataset.reponse = reponsesAll[matrix[1]+12][3];
+quizReponse3.dataset.reponse = reponsesAll[matrix[2]+12][3];
+quizReponse4.dataset.reponse = reponsesAll[matrix[3]+12][3];
 //######################################
                 break;
-                     case reponsesAll[16][1]:
+                     case reponsesAll[16][1]:         // id question reponse  équivalent 
 console.log(`reponses possible ${reponsesAll[16][2]}`);  
 console.log(`  ${reponsesAll[17][2]} `)    ;      
 console.log(`  ${reponsesAll[18][2]} ` )   ;                                        
 console.log(`${reponsesAll[19][2]} ` ); 
 //######################################
-quizReponse1.innerText  = reponsesAll[16][2] ;
-quizReponse2.innerText  = reponsesAll[17][2] ;
-quizReponse3.innerText  = reponsesAll[18][2] ;
-quizReponse4.innerText  = reponsesAll[19][2] ;
+quizReponse1.innerText  = reponsesAll[matrix[0]+16][2] ;
+quizReponse2.innerText  = reponsesAll[matrix[1]+16][2] ;
+quizReponse3.innerText  = reponsesAll[matrix[2]+16][2] ;
+quizReponse4.innerText  = reponsesAll[matrix[3]+16][2] ;
 
-quizReponse1.dataset.reponse  = reponsesAll[16][3] ;
-quizReponse2.dataset.reponse  = reponsesAll[17][3] ;
-quizReponse3.dataset.reponse  = reponsesAll[18][3] ;
-quizReponse4.dataset.reponse  = reponsesAll[19][3] ;
+quizReponse1.dataset.reponse  = reponsesAll[matrix[0]+16][3] ;    // valeur boolean reponse vrais ou faut
+quizReponse2.dataset.reponse  = reponsesAll[matrix[1]+16][3] ;
+quizReponse3.dataset.reponse  = reponsesAll[matrix[2]+16][3] ;
+quizReponse4.dataset.reponse  = reponsesAll[matrix[3]+16][3] ;
 //######################################
                 break;
 }
