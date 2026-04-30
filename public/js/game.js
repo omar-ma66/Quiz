@@ -20,14 +20,10 @@ let reponsesAll;
 let questionsID = [];
 let questionsEnonce = [];
 let compteur = 0;
-let gameObjet = [
-  ["idpseudo","pseudo","theme","time","reponse","idquestion","idreponse"],
-  ["idpseudo","pseudo","theme","time","reponse","idquestion","idreponse"],
-  ["idpseudo","pseudo","theme","time","reponse","idquestion","idreponse"],
-  ["idpseudo","pseudo","theme","time","reponse","idquestion","idreponse"],
-  ["idpseudo","pseudo","theme","time","reponse","idquestion","idreponse"]
-
-];
+let pageSuivente = 0;
+let numQuestion = 0 ;
+let gameObjet = ["questions","temps"];
+g
 
 
 function createRandomMatrix(limite)
@@ -74,34 +70,63 @@ function createRandomMatrix(limite)
     }
   }
 
-
+let pageSuivante = 0;
 //bg-[#d9D9D9] Evenement des 4 boutons reponse
-function initEventBoutonReponse(btn)
+let tour = 0 ;
+function initEventBoutonReponse(btn,quiz)
 {
-    
+ 
+  
   if (btn)
-      { console.log("#########++++++++++++++++++++++++++++###########");
+      { 
+        console.log("#########++++++++++++++++++++++++++++###########");
         btn.addEventListener('click',(event)=>{
 
-           if( btn.classList.contains('bg-[#d9d9d9]') )
-                {
-                  console.log("#########((((((((((((###########");
-                  
-                 btn.classList.remove("bg-[#d9d9d9]"); 
-                 btn.classList.add("bg-green-300"); 
-    
-                 
-                }
+if(pageSuivante != numQuestion) return ;
+pageSuivante++;
+          tour++;
+          console.log(`le tour num ${tour} : ${pageSuivante}: ${numQuestion} ${decompte}`);
+        
+                     if(quiz.dataset.reponse === "1")
+                     {
+                         btn.classList.remove("bg-[#d9d9d9]"); 
+                        btn.classList.add("bg-green-300"); 
+                        progresseBarre();
+                        gameObjet["qestions"]++;
+                        gameObjet["temps"]+=decompte;
+                     }
+                     else{
+                        btn.classList.remove("bg-[#d9d9d9]"); 
+                        btn.classList.add("bg-red-300"); 
+                            if( quizReponse1.dataset.reponse === "1")
+                                { boiteReponse1.classList.remove("bg-[#d9d9d9]"); 
+                                  boiteReponse1.classList.add("bg-green-300"); }
+                                   if( quizReponse2.dataset.reponse === "1")
+                                { boiteReponse2.classList.remove("bg-[#d9d9d9]"); 
+                                  boiteReponse2.classList.add("bg-green-300"); }
+                                     if( quizReponse3.dataset.reponse === "1")
+                                { boiteReponse3.classList.remove("bg-[#d9d9d9]"); 
+                                  boiteReponse3.classList.add("bg-green-300"); }
+                                       if( quizReponse4.dataset.reponse === "1")
+                                { boiteReponse4.classList.remove("bg-[#d9d9d9]"); 
+                                  boiteReponse4.classList.add("bg-green-300"); }
+                     }
+stopTime();
+btnSuivantVisible();
+
         })
+
+    
+
       }
       else
       console.log("############################################");
     }
 
-initEventBoutonReponse(boiteReponse1);
-initEventBoutonReponse(boiteReponse2);
-initEventBoutonReponse(boiteReponse3);
-initEventBoutonReponse(boiteReponse4);
+initEventBoutonReponse(boiteReponse1,quizReponse1);
+initEventBoutonReponse(boiteReponse2,quizReponse2);
+initEventBoutonReponse(boiteReponse3,quizReponse3);
+initEventBoutonReponse(boiteReponse4,quizReponse4);
 
 
 function btnSuivantInvisible()
@@ -190,21 +215,43 @@ function stopTime()
 
 //#############################################
 // progresse barre indique la progression des bonnes reponses 
+let level = 0 ;
 function progresseBarre()
 {
   if(progresseBarreElement)
-      {
-   
-        if(progresseBarreElement.classList.contains("invisible"))
-        {
-            progresseBarreElement.classList.remove("invisible");
-        }
-      }
-   else
-    {
-      console.log("Un probleme dans progresse barre");
-    }   
+      {   
+                  switch(  parseInt (progresseBarreElement.dataset.level))
+                  {
+                    case 0 :progresseBarreElement.classList.remove("invisible");
+                            progresseBarreElement.dataset.level = 1;
+                      break;
+                    case 1 :
+                 
+                            progresseBarreElement.classList.remove("w-1/5");
+                            progresseBarreElement.classList.add("w-2/5");
+                            progresseBarreElement.dataset.level =  2;
+                     break;
+                    case 2:
+                            progresseBarreElement.classList.remove("w-2/5");
+                            progresseBarreElement.classList.add("w-3/5");
+                            progresseBarreElement.dataset.level = 3;
+                      break;
+                    case 3:
+                              progresseBarreElement.classList.remove("w-3/5");
+                            progresseBarreElement.classList.add("w-4/5");
+                            progresseBarreElement.dataset.level =  4;
+                      break;
+                    case 4:
+                              progresseBarreElement.classList.remove("w-4/5");
+                            progresseBarreElement.classList.add("w-5/5");
+                            progresseBarreElement.dataset.level = 5;   
+                      break;
+                   case 5:
+                    break;        
+                     
+                  } 
     return ;
+}
 }
 
 //#############################################
@@ -217,22 +264,30 @@ function setQuestion(num)
 
 function InitDataReponses()
 {
-  quizReponse1.dataset.reponse = 0 ;
-  quizReponse2.dataset.reponse = 0 ;
-  quizReponse3.dataset.reponse = 0 ;
-  quizReponse4.dataset.reponse = 0 ;
+  quizReponse1.dataset.reponse = "0" ;
+  quizReponse2.dataset.reponse = "0" ;
+  quizReponse3.dataset.reponse = "0" ;
+  quizReponse4.dataset.reponse = "0" ;
 }
 
+function InitDataReponsesBoite()
+{
+boiteReponse1.dataset.reponse = "0";
+boiteReponse2.dataset.reponse = "0";
+boiteReponse3.dataset.reponse = "0";
+boiteReponse4.dataset.reponse = "0";
+}
 
 //###########################################################################
 // le jeux commance
 let bonneReponse = 1;
-let numQuestion = 0 ;
+
 //###########################################################################
 function playGame()
 {
   InitBackColorReponse(); // initialise le fond des reponses
   InitDataReponses();    // init la dataset 
+  InitDataReponsesBoite();
   btnSuivantInvisible();
   const matrix = createRandomMatrix(4);
   let questionsID = questionsAllInformations["questions"][numQuestion][0];
@@ -253,7 +308,7 @@ console.log( `:${question}`);
 
   setQuestion(numQuestion+1);  // affiche le numero de question
   runTime(15); // demarage du chrono
-   progresseBarre(); 
+  //  progresseBarre(); 
               switch(questionsID)       // id de la question
               {
                 case reponsesAll[0][1]:         // id question reponse  équivalent 
@@ -272,6 +327,12 @@ quizReponse1.dataset.reponse = reponsesAll[matrix[0]][3];
 quizReponse2.dataset.reponse = reponsesAll[matrix[1]][3];
 quizReponse3.dataset.reponse = reponsesAll[matrix[2]][3];
 quizReponse4.dataset.reponse = reponsesAll[matrix[3]][3];
+
+boiteReponse1.dataset.reponse = reponsesAll[matrix[0]][3];
+boiteReponse2.dataset.reponse = reponsesAll[matrix[1]][3];
+boiteReponse3.dataset.reponse = reponsesAll[matrix[2]][3];
+boiteReponse4.dataset.reponse = reponsesAll[matrix[3]][3];
+
 //######################################
                 break;
                  case reponsesAll[4][1]:        // id question reponse  équivalent                                   
@@ -290,6 +351,12 @@ quizReponse1.dataset.reponse = reponsesAll[matrix[0]+4][3];
 quizReponse2.dataset.reponse = reponsesAll[matrix[1]+4][3];
 quizReponse3.dataset.reponse = reponsesAll[matrix[2]+4][3];
 quizReponse4.dataset.reponse = reponsesAll[matrix[3]+4][3];
+
+boiteReponse1.dataset.reponse = reponsesAll[matrix[0]+4][3];
+boiteReponse2.dataset.reponse = reponsesAll[matrix[1]+4][3];
+boiteReponse3.dataset.reponse = reponsesAll[matrix[2]+4][3];
+boiteReponse4.dataset.reponse = reponsesAll[matrix[3]+4][3];
+
 //######################################
                 break;
                     case reponsesAll[8][1]:    // id question reponse  équivalent 
@@ -308,6 +375,12 @@ quizReponse1.dataset.reponse = reponsesAll[matrix[0]+8][3];
 quizReponse2.dataset.reponse = reponsesAll[matrix[1]+8][3];
 quizReponse3.dataset.reponse = reponsesAll[matrix[2]+8][3];
 quizReponse4.dataset.reponse = reponsesAll[matrix[3]+8][3];
+
+
+boiteReponse1.dataset.reponse = reponsesAll[matrix[0]+8][3];
+boiteReponse2.dataset.reponse = reponsesAll[matrix[1]+8][3];
+boiteReponse3.dataset.reponse = reponsesAll[matrix[2]+8][3];
+boiteReponse4.dataset.reponse = reponsesAll[matrix[3]+8][3];
 //######################################
                 break;
                      case reponsesAll[12][1]:     // id question reponse  équivalent 
@@ -326,6 +399,11 @@ quizReponse1.dataset.reponse = reponsesAll[matrix[0]+12][3];
 quizReponse2.dataset.reponse = reponsesAll[matrix[1]+12][3];
 quizReponse3.dataset.reponse = reponsesAll[matrix[2]+12][3];
 quizReponse4.dataset.reponse = reponsesAll[matrix[3]+12][3];
+
+boiteReponse1.dataset.reponse = reponsesAll[matrix[0]+12][3];
+boiteReponse2.dataset.reponse = reponsesAll[matrix[1]+12][3];
+boiteReponse3.dataset.reponse = reponsesAll[matrix[2]+12][3];// valeur boolean reponse vrais ou faut
+boiteReponse4.dataset.reponse = reponsesAll[matrix[3]+12][3];
 //######################################
                 break;
                      case reponsesAll[16][1]:         // id question reponse  équivalent 
@@ -339,10 +417,15 @@ quizReponse2.innerText  = reponsesAll[matrix[1]+16][2] ;
 quizReponse3.innerText  = reponsesAll[matrix[2]+16][2] ;
 quizReponse4.innerText  = reponsesAll[matrix[3]+16][2] ;
 
-quizReponse1.dataset.reponse  = reponsesAll[matrix[0]+16][3] ;    // valeur boolean reponse vrais ou faut
+quizReponse1.dataset.reponse  = reponsesAll[matrix[0]+16][3] ;    
 quizReponse2.dataset.reponse  = reponsesAll[matrix[1]+16][3] ;
 quizReponse3.dataset.reponse  = reponsesAll[matrix[2]+16][3] ;
 quizReponse4.dataset.reponse  = reponsesAll[matrix[3]+16][3] ;
+
+boiteReponse1.dataset.reponse  = reponsesAll[matrix[0]+16][3] ;    // valeur boolean reponse vrais ou faut
+boiteReponse2.dataset.reponse  = reponsesAll[matrix[1]+16][3] ;
+boiteReponse3.dataset.reponse  = reponsesAll[matrix[2]+16][3] ;
+boiteReponse4.dataset.reponse  = reponsesAll[matrix[3]+16][3] ;
 //######################################
                 break;
 }
