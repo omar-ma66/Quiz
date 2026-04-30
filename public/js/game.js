@@ -23,7 +23,7 @@ let compteur = 0;
 let pageSuivente = 0;
 let numQuestion = 0 ;
 let gameObjet = ["questions","temps"];
-g
+
 
 
 function createRandomMatrix(limite)
