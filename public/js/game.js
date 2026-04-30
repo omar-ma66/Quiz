@@ -23,7 +23,8 @@ let compteur = 0;
 let pageSuivente = 0;
 let numQuestion = 0 ;
 let gameObjet = ["questions","temps"];
-
+gameObjet["questions"] = 0;
+gameObjet["temps"] = 0;
 
 
 function createRandomMatrix(limite)
@@ -85,15 +86,14 @@ function initEventBoutonReponse(btn,quiz)
 if(pageSuivante != numQuestion) return ;
 pageSuivante++;
           tour++;
-          console.log(`le tour num ${tour} : ${pageSuivante}: ${numQuestion} ${decompte}`);
+          console.log(`le tour num ${tour} : ${pageSuivante}: ${numQuestion} ${decompte} question ${gameObjet["questions"]} temps ${gameObjet["temps"]}`);
         
                      if(quiz.dataset.reponse === "1")
                      {
                          btn.classList.remove("bg-[#d9d9d9]"); 
                         btn.classList.add("bg-green-300"); 
                         progresseBarre();
-                        gameObjet["qestions"]++;
-                        gameObjet["temps"]+=decompte;
+                      
                      }
                      else{
                         btn.classList.remove("bg-[#d9d9d9]"); 
