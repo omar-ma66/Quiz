@@ -17,7 +17,7 @@
 <!-- ############################################################################################# -->
 
 
-<body class="w-screen h-screen">
+<body class="w-screen  min-h-dvh">
   <main class="gap-8 flex flex-col pt-30">
     <!-- ############################################################################################# -->
     <section class="flex flex-col justify-center items-center gap-3.5 lg:gap-6">
