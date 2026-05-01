@@ -31,7 +31,7 @@
         <h3 class="text-2xl lg:text-3xl">bonnes réponses</h3>
 
         <div class="w-4/5 h-2.5 bg-[#9CCCFB] mb-5">
-          <div id="progresse-barre"  data-level="0" class=" invisible  h-2.5 bg-[#158DFE]"></div>
+          <div id="progresse-barre" data-level="0" class=" invisible  h-2.5 bg-[#158DFE]"></div>
         </div>
 
         <h3 id="score-pourcent" class="mb-10 text-2xl lg:text-3xl">0% de réussite</h3>

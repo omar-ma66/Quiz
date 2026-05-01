@@ -23,11 +23,9 @@ let compteur = 0;
 let pageSuivente = 0;
 let numQuestion = 0;
 let gameObjet = {
-      questions:0,
-      temps    :0
+  questions: 0,
+  temps: 0,
 };
-
-
 
 //################################################################
 // cette fonction génére un tableau de nombre alléatoire
@@ -94,9 +92,9 @@ function initEventBoutonReponse(btn, quiz) {
       if (quiz.dataset.reponse === "1") {
         btn.classList.remove("bg-[#d9d9d9]");
         btn.classList.add("bg-green-300");
-        gameObjet["questions"]++;   // ajout du nombre de bonne réponses
-        gameObjet["temps"] += decompte  // ajout le temps
-        localStorage.setItem("gameClassement",JSON.stringify(gameObjet));
+        gameObjet["questions"]++; // ajout du nombre de bonne réponses
+        gameObjet["temps"] += decompte; // ajout le temps
+        localStorage.setItem("gameClassement", JSON.stringify(gameObjet));
         progresseBarre();
       } else {
         btn.classList.remove("bg-[#d9d9d9]");
@@ -427,7 +425,7 @@ async function getReponses(questions) {
         `debug :fichier game.js fonction getReponse.js : tout est ok : taille = ${data["taille"]}`,
       );
       reponsesAll = data["reponsesAll"];
-      
+
       playGame();
     } else {
       console.log(
