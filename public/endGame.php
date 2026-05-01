@@ -17,12 +17,12 @@
 <!-- ############################################################################################# -->
 
 
-<body class="w-screen  min-h-dvh">
-  <main class="gap-8 flex flex-col pt-30">
+<body class="w-screen h-screen">
+  <main class="gap-8 flex flex-col pt-10">
     <!-- ############################################################################################# -->
     <section class="flex flex-col justify-center items-center gap-3.5 lg:gap-6">
-      <img class="w-17 lg:w-25" src="png/classement.png" alt="classement" />
-      <h2 class="text-4xl mt-10">Quiz terminé</h2>
+      <img class="w-12 lg:w-25" src="png/classement.png" alt="classement" />
+      <h2 class="text-3xl ">Quiz terminé</h2>
 
       <div
         class="font-bold text-2xl w-5/6 flex flex-col justify-center items-center gap-4 bg-gray-400 rounded-3xl ">
