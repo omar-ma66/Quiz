@@ -20,47 +20,47 @@ session_start();
 <!-- ############################################################################################# -->
 
 
-<body class="w-screen h-screen">
+<body class="w-screen min-h-dvh">
 
-  <main class="lg:flex flex-row min-h-dvh  gap-6">
+  <main class="lg:flex flex-row min-h-dvh  gap-4">
 
     <!-- ############################################################################################# -->
-    <div class=" bg-[#158DFE]  lg:flex-col flex-1  lg:pb-30">
+    <div class=" bg-[#158DFE]  lg:flex-col flex-1  lg:pb-20">
 
-      <section class=" flex flex-row justify-start items-center p-3 gap-26 font-bold text-2xl text-white lg:text-6xl pb-10 ">
+      <section class=" flex flex-row justify-start items-center p-2 gap-26 font-bold text-2xl text-white lg:text-6xl  ">
         <img
           src="png/cerveau.png"
           alt="image serveau"
-          class="w-8.75 h-8.75 lg:w-17 lg:h-17" />
+          class="w-6 h-6 lg:w-16 lg:h-16" />
         <h1>QuizMaster</h1>
       </section>
 
-      <hr class="bg-[#565857] lg:" />
+      <hr class="bg-[#565857] " />
       <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
       <section
-        class="  gap-x-10 text-2xl flex flex-row justify-center items-center pt-30  text-[#FFFFFF] lg:gap-x-20 lg:order-4  lg:pt-30 lg:text-4xl ">
-        <article class="flex flex-col justify-center items-center gap-7  ">
+        class="  gap-x-10  flex flex-row justify-center items-center pt-3  text-[#FFFFFF] lg:gap-x-20 lg:order-4  lg:pt-30 lg:text-4xl ">
+        <article class="flex flex-col justify-center items-center gap-3  ">
           <img
             src="png/classement.png"
             alt="image classement"
-            class="w-12 h-12 lg:w-17 lg:h-17" />
+            class="w-10 h-10 lg:w-16 lg:h-16" />
           <h2>classement</h2>
         </article>
         <!-- ----------------------------------------------------------- -->
-        <article class="flex flex-col justify-center items-center gap-7  ">
+        <article class="flex flex-col justify-center items-center gap-3   ">
           <img
             src="png/theme-dechantillon-de-couleur.png"
             alt="image théme"
-            class="w-12 h-12 lg:w-17 lg:h-17" />
+            class="w-10 h-10 lg:w-16 lg:h-16" />
           <h2>Thèmes</h2>
         </article>
         <!-- ----------------------------------------------------------- -->
 
-        <article class="flex flex-col justify-center items-center gap-7 ">
+        <article class="flex flex-col justify-center items-center gap-3  ">
           <img
             src="png/gestion-du-temps.png"
             alt="image temps"
-            class="w-12 h-12 lg:w-17 lg:h-17" />
+            class="w-10 h-10 lg:w-16 lg:h-16" />
           <h2>Temps</h2>
         </article>
         <!-- ----------------------------------------------------------- -->
@@ -68,14 +68,14 @@ session_start();
       </section>
       <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
       <section
-        class="text-[24px]  text-[#FFFFFF] flex flex-wrap justify-center p-10  lg:pt-30">
+        class="text-2xl  text-[#FFFFFF] flex flex-wrap justify-center text-center px-2 py-10 pb-10 lg:pt-32">
         <h2 class=" lg:text-5xl">Prêt à tester vos connaissances ?</h2>
       </section>
     </div>
     <!-- ############################################################################################# -->
 
     <div class="lg:flex-col flex-1">
-      <section class="flex flex-wrap justify-center p-10 text-2xl  lg:p-20 ">
+      <section class="flex flex-wrap justify-center text-center px-3 py-10 text-2xl  lg:p-20 ">
         <h2 class="lg:text-4xl">Connectez vous pour reprendre vos quiz</h2>
       </section>
       <form
@@ -89,7 +89,7 @@ session_start();
           id="id-pseudo"
           required
           placeholder="votre pseudo"
-          class="bg-gray-50 w-3/5 p-4 rounded-[20px] font-bold text-black " />
+          class="bg-gray-200 w-3/5 p-4 rounded-[20px] text-black " />
         <input
           type="submit"
           value="Se connecter"
