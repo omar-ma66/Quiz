@@ -1,6 +1,6 @@
 <?php
-define("USER","hacker");
-define("PASS","superhacker");
+define("USER","root");
+define("PASS","");
 define("HOST","localhost");
 define("DATABASE","quiz");
 define("PORT","8889");
