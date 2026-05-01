@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EndGame</title>
   <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <script defer async src="js/endGame.js" type="module"></script>
 </head>
 
 
@@ -26,14 +27,14 @@
 
       <div
         class="font-bold text-2xl w-5/6 flex flex-col justify-center items-center gap-4 bg-gray-400 rounded-3xl ">
-        <h2 class="text-2xl lg:text-5xl lg:p-6">1/5</h2>
+        <h2 id="score-reponses" class="text-2xl lg:text-5xl lg:p-6">1/5</h2>
         <h3 class="text-2xl lg:text-3xl">bonnes réponses</h3>
 
         <div class="w-4/5 h-2.5 bg-[#9CCCFB] mb-5">
-          <div class="w-1/5 h-2.5 bg-[#158DFE]"></div>
+          <div id="progresse-barre"  data-level="0" class=" invisible  h-2.5 bg-[#158DFE]"></div>
         </div>
 
-        <h3 class="mb-10 text-2xl lg:text-3xl">0% de réussite</h3>
+        <h3 id="score-pourcent" class="mb-10 text-2xl lg:text-3xl">0% de réussite</h3>
       </div>
     </section>
     <!-- ---------------------------------------------------------------------------------------------------------------- -->
