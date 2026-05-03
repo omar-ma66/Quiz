@@ -68,20 +68,20 @@ session_start();
       </section>
       <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
       <section
-        class="text-2xl  text-[#FFFFFF] flex flex-wrap justify-center text-center px-2 py-10 pb-10 lg:pt-32">
+        class="text-2xl  text-[#FFFFFF] flex flex-wrap justify-center text-center px-2 py-8 pb-8 lg:pt-32">
         <h2 class=" lg:text-5xl">Prêt à tester vos connaissances ?</h2>
       </section>
     </div>
     <!-- ############################################################################################# -->
 
     <div class="lg:flex-col flex-1">
-      <section class="flex flex-wrap justify-center text-center px-3 py-10 text-2xl  lg:p-20 ">
+      <section class="flex flex-wrap justify-center text-center px-3 py-8 text-2xl  lg:p-15 ">
         <h2 class="lg:text-4xl">Connectez vous pour reprendre vos quiz</h2>
       </section>
       <form
         action="../src/connection.php"
         method="post"
-        class="flex flex-col justify-center items-center text-2xl gap-5 lg:text-3xl lg:gap-15 lg:pt-4">
+        class="flex flex-col justify-center items-center text gap-3 lg:text-3xl lg:gap-4 lg:pt-4">
         <label for="id-pseudo">Nom d'utilisateur</label>
         <input
           type="text"
@@ -89,12 +89,15 @@ session_start();
           id="id-pseudo"
           required
           placeholder="votre pseudo"
-          class="bg-gray-200 w-3/5 p-4 rounded-[20px] text-black " />
+          class="bg-gray-200 w-3/5 p-3 rounded-[20px] text-black " />
         <input
           type="submit"
           value="Se connecter"
-          class="bg-[#158DFE] p-5 w-3/5 rounded-[20px] text-[#FFFF]" />
+          class="bg-[#158DFE] p-3 w-3/5 rounded-[20px] text-[#FFFF]" />
       </form>
+      <div class="flex flex-col justify-center items-center lg:text-3xl "> 
+       <a class="block  text-[#FFFFFF]  w-3/5 text-center mt-5 py-3 px-4 rounded-[20px] bg-[#158DFE] " href="classement.php">Classement</a> 
+      </div>
     </div>
   </main>
 </body>
