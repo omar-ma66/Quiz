@@ -11,7 +11,7 @@ $themeArray =     json_decode(file_get_contents("php://input"), true);
 if ($themeArray["status"] === "debug") {
     require("../../src/PDOConnect.php");
     $idcon = PDOConnect("../../src/param");
-    $themeChoisi = $themeArray["theme"];
+    $themeChoisi = htmlspecialchars($themeArray["theme"]);
     $query  = "SELECT * from themes where theme = :theme";
     $reqPreparer = $idcon->prepare($query);
     $dataPrepare = ["theme" => $themeChoisi];
@@ -21,6 +21,8 @@ if ($themeArray["status"] === "debug") {
         $data = $reqPreparer->fetch(PDO::FETCH_NUM);
         $reqPreparer->closeCursor();
         $idcon = null;
+        $_SESSION["theme_id"] = $data[0];
+        error_log($_SESSION["theme_id"]);
         echo json_encode(["status" => "success", "infoTheme" => $data]);
     }
 } else {
