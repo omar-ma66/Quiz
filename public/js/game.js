@@ -92,6 +92,7 @@ function initEventBoutonReponse(btn, quiz) {
       if (quiz.dataset.reponse === "1") {
         btn.classList.remove("bg-[#d9d9d9]");
         btn.classList.add("bg-green-300");
+        if (decompte !== 0)
         gameObjet["questions"]++; // ajout du nombre de bonne réponses
         gameObjet["temps"] += decompte; // ajout le temps
         localStorage.setItem("gameClassement", JSON.stringify(gameObjet));
