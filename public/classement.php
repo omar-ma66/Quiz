@@ -58,5 +58,8 @@ $idcon = null;
                 </tbody>           
                  </table>   
                  </div>
+                 <div class="flex flex-row w-full h-6 justify-center items-center pt-5"> 
+            <a class="block w-1/5 p-2 text-white font-bold rounded-2xl bg-blue-500 text-center" href="endGame.php">RETOUR </a>   
+          </div>  
 </body>
 </html>
